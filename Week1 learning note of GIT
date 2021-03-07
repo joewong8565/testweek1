@@ -59,6 +59,10 @@ git branch -d | 刪除指定分支
 
 git checkout | 轉換分支(switch概念)
 
+git merge  | 合併兩個分支
+
+conflict | 手動解決衝突(會有提示去做刪減、增加)
+
 
 
 
