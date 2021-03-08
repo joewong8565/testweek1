@@ -31,6 +31,8 @@ git commit | 版本更新
 
 git commit -m + "文字"| 直接留言+版本更新
 
+git commit --amend  | 修改commit meassage
+
 git add + git commit ;若一樣維持版本控制，每次都要進行上述動作，可以再做一次新的commit
 ---------------------------------------------------
 
@@ -63,6 +65,11 @@ git merge  | 合併兩個分支
 
 conflict | 手動解決衝突(會有提示去做刪減、增加)
 
+git push | 將本地檔案傳到遠端
+
+git pull | 將遠端檔案同步至本地
+
+git clone | 複製遠端的 Repository 檔案到本地端
 
 
 
