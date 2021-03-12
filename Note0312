@@ -19,31 +19,134 @@ for迴圈
 
 
 ▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃
-資料結構  氣泡排序法應用
-public class BubbleSort {
+程式設計
+
+public class class0312_N458 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-    
-	int Array1[]=new int[] {25,10,39,40,33,12};
-	int temp= 0;
-	for(int i=0;i<Array1.length-1;i++){
-		for(int j=0;j<Array1.length-1;j++)
-		{
-			if(Array1[j]>Array1[j+1]) {
-				temp=Array1[j];Array1[j]=Array1[j+1];Array1[j+1]=temp;
+		int Array1[]=new int[] {25,10,39,40,33,12};
+		int temp= 0;
+		for(int i=0;i<Array1.length-1;i++){
+			for(int j=0;j<Array1.length-1;j++)
+			{
+				if(Array1[j]>Array1[j+1]) {
+					temp=Array1[j];Array1[j]=Array1[j+1];Array1[j+1]=temp;
+				}
 			}
+			
+		}
+			for(int i:Array1)
+			{
+				System.out.printf("%d   ", i);
+			}
+			
+		}
+
+	}
+
+##### 陣列練習
+	 
+	import java.util.Scanner;
+
+	public class classArray1 {
+
+		public static void main(String[] args) {
+			// TODO Auto-generated method stu
+			Scanner sc = new Scanner(System.in);
+			int sales[] = new int[4];
+			
+			
+			
+		    double Sum = 0,Avg;
+		    
+		    
+		    
+		    for(int i =1;i<=sales.length;i++)
+		    {
+		    	System.out.printf("第%d季的營業額:", i);
+		    	sales[i-1]=sc.nextInt();
+		    	Sum=Sum+sales[i-1];
+		    }
+		    
+		    Avg = Sum/12;
+		    System.out.printf("年度營業額:%.0f\n",Sum);
+		    System.out.printf("平均各月營業額:%.2f\n",Avg);
+	
+//原先自己打的  但遇到數量很多的時候沒效率
+		    System.out.println("第1季營業額:"+sales[0]);
+		    System.out.println("第2季營業額:"+sales[1]);
+		    System.out.println("第3季營業額:"+sales[2]);
+		    System.out.println("第4季營業額:"+sales[3]);
+		    
+		    Sum = sales[0]+sales[1]+sales[2]+sales[3];
+		    Avg = Sum/12;
+		    
+		    System.out.println("年度營業額:"+Sum);
+		    System.out.println("平均各月營業額:"+Avg);
+		    
 		}
 		
-	}
-		for(int i:Array1)
-		{
-			System.out.printf("%d   ", i);
+	
+
+
+#####印出99乘法表
+public class ch5_04 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int array[][]=new int[9][9];
+		for(int i=0;i<9;i++) {
+			for(int j=0;j<9;j++)
+			{
+				array[i][j]=(i+1)*(j+1);
+			}
 		}
+		for(int i=0;i<9;i++)
+		{
+			for(int j=0;j<9;j++)
+			{
+				System.out.printf("%2d *%2d = %3d  ", i+1,j+1,array[i][j]);
+			}
+			
+			System.out.println();
+		}
+		
+		
 		
 	}
 
 }
+
+
+
+#####列出學生成績(陣列)
+
+public class ch5_05 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+     double data[][]= {{85,78,65,0},{75,85,59,0},{63,67,95,0},{94,92,88,0},{74,65,73,0}};
+     double temp;
+     for(int i =0;i<data.length;i++) {
+    	 temp=0;
+    	 for(int j=0;j<data.length-1;j++) {
+    		 temp=temp+data[i][j];
+    	 }
+    	 data[i][3]=temp/3;
+     }
+     System.out.printf("計概    數學    英文    平均\n");
+     System.out.printf("===============================\n");
+     for(int i =0;i<data.length;i++)
+     {
+    	 System.out.printf("%.1f  %.1f  %.1f  %.2f\n", data[i][0],data[i][1],data[i][2],data[i][3]);
+     }
+	}
+
+}
+
+
 ▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃
 
 
