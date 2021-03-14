@@ -13,7 +13,24 @@ a++ 會先執行其他動作才++
 
 變數型態　　boolean number string 
            object undefined function 
-           
+
+object :屬性名稱、屬性內容（陣列）
           
 陣列Array[]
 索引由０開始
+
+變數運算可能會有浮點數誤差！！
+
+＝＝　與　＝＝＝　的差別在於型態，在寫ｊｓ的時候，最好都使用＝＝＝，ｄｅｂｕｇ時才能快速查覺到問題
+
+
+迴圈
+if else
+if....else if...else
+
+switch(){
+case1:
+
+case2:
+
+}
