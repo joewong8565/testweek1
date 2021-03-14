@@ -98,4 +98,26 @@ Math.random():隨機產生一個小數，範圍介於0~1之間，但不包含1
 
 .toLowerCase()：把字串放小寫
 
+.indexOf()：arr.indexOf(searchElement[, fromIndex])，searchElement，是欲在陣列中搜尋的元素，fromIndex，是選擇性陣列中搜尋的起始索引。
+
+.fromCharCode()：括號內可接受一個指定的 Unicode 值，然後回傳一個字符串。
+
 .split()： 方法用於把一个字符串分割成字符串陣列，可以決定用什麼資料來切
+
+.trim()：取代空格
+
+.length
+
+#####Array
+
+.join() ：會把()內的資料給添加在所有陣列後面
+
+.map()： .map(function)會建立一個新的陣列，其內容為原陣列的每一個元素經由回呼函式運算後所回傳的結果之集合。
+
+.filter()： 可以把東西過濾掉，True 的東西會留下來，false 的東西會不見
+
+.slice()：slice 變成一塊一塊
+
+.splice()： 可以插入元素，也可以刪除元素
+
+.sort()：對一個陣列的所有元素進行排序，並回傳此陣列。排序不一定是穩定的，預設的排序順序是根據字串的 Unicode 編碼位置而定
