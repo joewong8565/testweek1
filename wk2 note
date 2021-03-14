@@ -63,5 +63,31 @@ function add(a,b)
 
 arguments 物件是一個對應傳入函式之引數的類陣列（Array-like）物件。
 
+一碰到return即會返回，後續code不會執行
 
 
+Number()： Number(string(字串))把括號內的轉為數字
+
+parseInt() ：parseInt(string (字串) , radix(字串的進位方式)) 把括號的內容轉變為十進位整數數字。
+
+parseFloat()：parseFloat(string(字串)) 回傳浮點數(小數)，主要功能是回傳小數點。
+
+.toFixed()：NumberObject.toFixed(num(到第幾位)) 搭配數字物件使用，只取前面幾位，通常用作捨去小數點使用，也會四捨五入，傳回的為字串。
+
+Number.MAX_VALUE：在 JavaScript 裡面可以儲存的最大數字，超過該值就會不精準
+
+Math.PI : 圓周率
+
+Math.ceil(): 無條件進位
+
+Math.floor():無條件捨去
+
+Math.round(): 四捨五入
+
+Math.sqrt(): 開根號
+
+Math.pow(): Math.pow(base, exponent)，base：基底，exponent：指數。
+
+Math.random():隨機產生一個小數，範圍介於0~1之間，但不包含1
+
+.toString: number.toString(radix)，radix，number 的進位方式
