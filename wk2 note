@@ -91,3 +91,11 @@ Math.pow(): Math.pow(base, exponent)，base：基底，exponent：指數。
 Math.random():隨機產生一個小數，範圍介於0~1之間，但不包含1
 
 .toString: number.toString(radix)，radix，number 的進位方式
+
+#####String
+
+.toUpperCase()：把字串變大寫
+
+.toLowerCase()：把字串放小寫
+
+.split()： 方法用於把一个字符串分割成字符串陣列，可以決定用什麼資料來切
