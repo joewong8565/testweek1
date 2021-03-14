@@ -1,0 +1,19 @@
+###JS
+&& || 
+
+位移運算
+＞＞＞＞
+
+and or xor not 
+
+var (variable)
+
+++a ++會先執行
+a++ 會先執行其他動作才++
+
+變數型態　　boolean number string 
+           object undefined function 
+           
+          
+陣列Array[]
+索引由０開始
