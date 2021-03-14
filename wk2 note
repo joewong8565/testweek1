@@ -34,3 +34,19 @@ case1:
 case2:
 
 }
+
+一元　二元　三元運算子（要再看
+condition ? 成功回傳Ａ　不成功回傳Ｂ
+
+if(){
+goto:(lable)
+}
+能達到迴圈的效果
+
+
+do while（先做再檢查）
+break 跳出迴圈
+continue 跳到下個迴圈
+
+while迴圈（先檢查再做）
+
