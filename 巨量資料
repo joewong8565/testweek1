@@ -15,6 +15,59 @@ b。提供頻率和百分比頻率分佈。
 c。構造一個條形圖和一個餅圖。
 d。根據樣本，哪個電視節目的觀眾最多？哪一個是第二個？
 
+TV Show
+CSI
+CSI
+Friends 
+ER
+CSI
+ER
+CSI
+Friends 
+Raymond
+CSI
+Friends 
+CSI
+CSI
+ER
+Friends 
+ER
+Friends 
+Friends 
+Friends 
+ER
+CSI
+Raymond
+ER
+Friends 
+CSI
+ER
+Friends 
+Raymond
+ER
+CSI
+CSI
+ER
+Friends 
+CSI
+CSI
+Friends 
+CSI
+Friends 
+Friends 
+Friends 
+CSI
+ER
+CSI
+Raymond
+Friends 
+Raymond
+Raymond
+CSI
+CSI
+ER
+
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
 
 2-21.  (CD) The Nielsen Home Technology Report provided information about home technology and its usage. The following data are the hours of personal computer usage during one week for a sample of 50 persons.
 4.1	1.5	10.4	5.9	3.4	5.7	1.6	6.1	3.0	3.7
@@ -27,10 +80,102 @@ C。直方圖
 d。不採納
 e。評論有關數據指示家庭個人計算機使用情況的信息。
 
+Hours
+4.1
+3.1
+4.1
+10.8
+7.2
+1.5
+4.8
+4.1
+2.8
+6.1
+10.4
+2.0
+8.8
+9.5
+5.7
+5.9
+14.8
+5.6
+12.9
+5.9
+3.4
+5.4
+4.3
+12.1
+4.7
+5.7
+4.2
+3.3
+0.7
+3.9
+1.6
+3.9
+7.1
+4.0
+3.7
+6.1
+4.1
+10.3
+9.2
+3.1
+3.0
+11.1
+6.2
+4.4
+6.1
+3.7
+3.5
+7.6
+5.7
+3.1
+
+
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
 
 2-36.  (CD) Refer to the data in Table 2.13.
 a.	Prepare a scatter diagram of the data on EPS Rating and Relative Price Strength.
 b.  Comment on the relationship, if any, between the variables. (The meaning of the EPS Rating is described in exercise 34. Relative Price Strength is a measure of the change in the stock’s price over the past 12 months. Higher values indicate greater strength.)
 Table 2.13 provides financial data for a sample of 36 companies whose stocks trade on the New York Stock Exchange (Investor’s Business Daily, April 7, 2000). The data on Sales/Margins/ROE are a composite rating based on a company’s sales growth rate, its profit margins, and its return on equity (ROE). EPS Rating is a measure of growth in earnings per share for the company.
+
+Company	EPS Rating	Relative Price Strength	Relative Strength	Sales/Margins/ROE	PE Ratio
+McDermott	6	6	A	C	7
+Bowater PLC	14	46	C	D	51
+NYMAGIC	17	45	D	D	15
+Mattel	18	20	E	D	29
+Atmos Engy	21	9	C	E	25
+Goodyear	21	9	E	D	19
+York Intl.	28	14	D	B	7
+Reebok	31	72	C	E	15
+Callaway Golf	46	62	B	E	20
+Teco Energy	49	48	D	B	12
+Hanson PLC	57	32	B	B	12
+AlaskaAirGp	58	17	C	B	6
+Nordstrom	58	57	B	C	21
+Office Depot	58	40	B	B	14
+US West	60	65	B	A	22
+Praxair	62	32	C	B	15
+Wachovia	69	36	E	B	14
+Dole Food	70	54	E	C	17
+Elec. Data Sys	72	69	A	B	36
+Central Parking	76	18	B	C	19
+ICN Pharm.	76	56	A	D	18
+Payless Shoes	76	59	B	B	12
+Fed. Dept. Stor.	79	21	D	B	11
+Jefferson plt	80	38	D	C	16
+Murphy Oil	80	62	B	B	26
+Texaco	80	31	D	C	23
+Advo	81	74	B	A	14
+Gateway	82	68	A	A	42
+Winnebago	83	49	D	A	8
+Alliant Tech	84	22	B	B	10
+Dean Foods	84	7	B	C	9
+Kroger	84	24	D	A	17
+Bnk of Am.	87	38	C	A	11
+Safeway	91	61	D	A	24
+Monaco	97	21	D	A	8
+United Rental	98	12	C	A	9
 
 
