@@ -11,13 +11,10 @@ public static void main(String args[])
   float radius=10.0f,area;
   area = compute_area(radius,3.14f);//radius,3.14f 為引數
 }
-
+float:4bytes  
 ╔══════════════════════════════════════════════════════════════════════════════════╗
 ║  3.14必須指定為float型態的3.14f，否則會被視為double，而由於不會自動轉型，故會發生錯誤。║
 ╚══════════════════════════════════════════════════════════════════════════════════╝
-
-
-
 
 
 public static void(void代表不需要回傳值)
@@ -26,3 +23,5 @@ public static float compute_area(float r,float pi)// r,pi為參數
   return r*r*pi ;
 }
 
+java函數式
+java.lang.Math.random()=取亂數
