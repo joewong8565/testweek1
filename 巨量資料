@@ -15,57 +15,43 @@ b。提供頻率和百分比頻率分佈。
 c。構造一個條形圖和一個餅圖。
 d。根據樣本，哪個電視節目的觀眾最多？哪一個是第二個？
 
-TV Show
-CSI
-CSI
-Friends 
-ER
-CSI
-ER
-CSI
-Friends 
-Raymond
-CSI
-Friends 
-CSI
-CSI
-ER
-Friends 
-ER
-Friends 
-Friends 
-Friends 
-ER
-CSI
-Raymond
-ER
-Friends 
-CSI
-ER
-Friends 
-Raymond
-ER
-CSI
-CSI
-ER
-Friends 
-CSI
-CSI
-Friends 
-CSI
-Friends 
-Friends 
-Friends 
-CSI
-ER
-CSI
-Raymond
-Friends 
-Raymond
-Raymond
-CSI
-CSI
-ER
+Ratings = c(TV Show,CSI,CSI,Friends, ER,CSI,ER,CSI,Friends, Raymond,CSI,Friends, CSI,CSI,ER,Friends, ER,Friends, Friends,Friends, ER,CSI,Raymond,ER,Friends, CSI,ER,Friends, Raymond,ER,CSI,CSI,ER,Friends, CSI,CSI,Friends, CSI,Friends, Friends, Friends, CSI,ER,CSI,Raymond,Friends, Raymond,Raymond,CSI,CSI,ER)
+
+
+
+
+
+
+
+1.定量分析是依據統計數據，建立數學模型，並用數學模型計算出分析對象的各項指標及其數值的一種方法;
+而定性分析則是主要憑分析者的直覺、經驗，憑分析對象過去和現在的延續狀況及最新的信息資料，對分析對象的性質、特點、發展變化規律做出判斷的一種方法。
+而收視率為個人主觀評判，因此符合「定性資料」的資訊則傾向於描述某個主題，而非進行測量，就像是某個人的印象、意見與看法的範疇。
+
+2.
+CSI Friends Raymond ER
+factor(Ratings)
+factor(Ratings, levels = c("CSI", "Friends", "Average", "Raymond", "ER"))
+
+d = factor(Ratings, levels = c("CSI", "Friends","Raymond", "ER"))
+(Ratings.table = table(d))
+
+labels = c("CSI", "Friends", "Raymond", "ER")
+barplot(Ratings.table, names = labels, col = c(1, 2, 3, 4))
+
+RatingsPer = c("CSI", "Friends", "Raymond", "ER")
+pie(Ratings.table, lable = RatingsPer)
+
+pareto.chart(Ratings.table)
+
+
+
+
+
+
+
+
+
+
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
 
