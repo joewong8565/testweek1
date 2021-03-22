@@ -28,6 +28,22 @@ Ratings = c(TV Show,CSI,CSI,Friends, ER,CSI,ER,CSI,Friends, Raymond,CSI,Friends,
 而收視率為個人主觀評判，因此符合「定性資料」的資訊則傾向於描述某個主題，而非進行測量，就像是某個人的印象、意見與看法的範疇。
 
 2.
+百分比及頻率
+pareto.chart(Ratings.table)
+
+3.
+長條圖
+labels = c("CSI", "Friends", "Raymond", "ER")
+barplot(Ratings.table, names = labels, col = c(1, 2, 3, 4))
+圓餅圖
+RatingsPer = c("CSI", "Friends", "Raymond", "ER")
+pie(Ratings.table, lable = RatingsPer)
+
+4.
+CSI最多，其次為Friends
+
+
+
 CSI Friends Raymond ER
 factor(Ratings)
 factor(Ratings, levels = c("CSI", "Friends", "Average", "Raymond", "ER"))
@@ -35,13 +51,10 @@ factor(Ratings, levels = c("CSI", "Friends", "Average", "Raymond", "ER"))
 d = factor(Ratings, levels = c("CSI", "Friends","Raymond", "ER"))
 (Ratings.table = table(d))
 
-labels = c("CSI", "Friends", "Raymond", "ER")
-barplot(Ratings.table, names = labels, col = c(1, 2, 3, 4))
 
-RatingsPer = c("CSI", "Friends", "Raymond", "ER")
-pie(Ratings.table, lable = RatingsPer)
 
-pareto.chart(Ratings.table)
+
+
 
 
 
