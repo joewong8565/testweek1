@@ -3,12 +3,28 @@ R語言實行網頁標題爬蟲
 library(rvest)
 > url  ="https://news.pts.org.tw/dailynews"
 > x = read_html(url)
-> x = read_html(url)%>%html_nodes(".news-list h2 a")
-> x = read_html(url)%>%html_nodes(".news-list h2 a")%>%html.text()
+> x = read_html(url)%>% html_nodes(".news-list h2 a")
+> x = read_html(url)%>% html_nodes(".news-list h2 a")%>%html_text()
 
-for(i  in c(2:1))
+
+> mode(x)
+
+> length(x)
+
+> is.vector(x)
+
+
+
+
+for(i  in c(2:4))
 {
    xx =read_html(paste0("https://news.pts.org.tw/dailynews?page=",i))
    y = xx %>% html_nodes(".news-list h2 a") %>% html_text()
-   z append(x,y)
+   x = append(x,y)
 }
+
+length(x)
+grep("台",x)
+yy = gsub("台","台灣",x)
+length(grep("台灣",yy))
+
