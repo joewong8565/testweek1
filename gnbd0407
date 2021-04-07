@@ -1,0 +1,14 @@
+R語言實行網頁標題爬蟲
+
+library(rvest)
+> url  ="https://news.pts.org.tw/dailynews"
+> x = read_html(url)
+> x = read_html(url)%>%html_nodes(".news-list h2 a")
+> x = read_html(url)%>%html_nodes(".news-list h2 a")%>%html.text()
+
+for(i  in c(2:1))
+{
+   xx =read_html(paste0("https://news.pts.org.tw/dailynews?page=",i))
+   y = xx %>% html_nodes(".news-list h2 a") %>% html_text()
+   z append(x,y)
+}
