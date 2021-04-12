@@ -1,7 +1,22 @@
-ales and Distribution 銷售與分銷 SD
+Sales and Distribution 銷售與分銷 SD
 Materials Management 物料管理 MM
 Production Paln and Control 生產計劃控制 PP
 Financial Accounting 財務會計 FI
 Controlling 成本控制 CO
 Quality Management 品質管理 QM
 Treasury Management 資金管理 TR
+
+
+ERP Unit 4                                                            內製：生產工單
+Sop 產銷協調                                                            ↑
+                             需求分析→獨立需求(規劃)→物料需求計劃(MRP)→訂單(規劃)
+                                        ↓                              ↓
+                                      主生產計劃(MPS)                  外購    
+sales 客戶訂單  
+
+
+
+針對產品群分析
+
+各產品
+各料號
