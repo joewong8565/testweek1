@@ -1,0 +1,100 @@
+package ttu.mis;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.google.cloud.datastore.Datastore;
+import com.google.cloud.datastore.DatastoreOptions;
+import com.google.cloud.datastore.Entity;
+import com.google.cloud.datastore.FullEntity;
+import com.google.cloud.datastore.Key;
+import com.google.cloud.datastore.KeyFactory;
+import com.google.cloud.datastore.ListValue;
+import com.google.cloud.datastore.PathElement;
+
+/**
+ * Servlet implementation class newfriend
+ */
+@WebServlet("/newfriend")
+public class newfriend extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+    
+	
+	private final Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
+	
+	private final KeyFactory keyFactory = datastore.newKeyFactory().setKind("Friend");
+	
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub		
+		
+		response.setContentType("text/plain");
+		response.setCharacterEncoding("UTF-8");
+		PrintWriter out = response.getWriter();
+		
+		String name = req.getParameter("name");
+		String email = req.getParameter("email");
+		String type = req.getParameter("type");
+		String number = req.getParameter("number");
+		
+		FullEntity<?> phone =datastore.get(newPhone(type,number,name));
+		ListValue typeP = ListValue.of(phone);
+		newFriend(name,email,typeP);
+		
+		FullEntity<?> home =datastore.get(newPhone("Home","02-12312312","CAT"));
+		FullEntity<?> mobile =datastore.get(newPhone("Home","0956972000","CAT"));
+		ListValue catPhones = ListValue.of(home,mobile);
+		newFriend("CAT","cat@appengine.com",catPhones);
+		
+		out.println("Data persisted,check it out @your_datastore");
+		
+		
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(req, response);
+	}
+	
+	
+	Key newFriend(String name,String email,ListValue phones) {
+		Key key = keyFactory.newKey(name+"Key");
+		Entity friend= Entity.newBuilder(key)
+				.set("name",name)
+				.set("email",email)
+				.set("phoneNumbers",phones)
+				.build();
+		datastore.put(friend);
+		return key;		
+	}
+	
+	Key newPhone(String type,String num,String name) {
+		KeyFactory keyFactory2 = datastore.newKeyFactory().addAncestor(PathElement.of("Friend",name)).setKind("Phone");
+		Key key = keyFactory2.newKey(name+type+"Key");
+		Entity phone = Entity.newBuilder(key)
+				.set("type",type)
+				.set("number",num)
+				.build();
+		datastore.put(phone);
+		return key;
+	}
+	
+	
+	
+
+}
