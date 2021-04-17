@@ -1,0 +1,8 @@
+網路基礎概論
+
+
+request,response都分成header與body，分別帶著不同的資訊。
+
+get 獲取資訊
+
+post
