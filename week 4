@@ -1,8 +1,134 @@
 網路基礎概論
 
-
+HTTP method
 request,response都分成header與body，分別帶著不同的資訊。
 
-get 獲取資訊
+GET
+GET 方法請求展示指定資源。使用 GET 的請求只應用於取得資料。
 
-post
+HEAD (en-US)
+HEAD 方法請求與 GET 方法相同的回應，但它沒有回應主體（response body）。
+
+POST
+POST 方法用於提交指定資源的實體，通常會改變伺服器的狀態或副作用（side effect）。
+
+PUT (en-US)
+PUT 方法會取代指定資源所酬載請求（request payload）的所有表現。
+
+DELETE (en-US)
+DELETE 方法會刪除指定資源.
+
+CONNECT
+CONNECT 方法會和指定資源標明的伺服器之間，建立隧道（tunnel）。
+
+OPTIONS (en-US)
+OPTIONS 方法描述指定資源的溝通方法（communication option）。
+
+TRACE (en-US)
+TRACE 方法會與指定資源標明的伺服器之間，執行迴路返回測試（loop-back test）。
+
+PATCH (en-US)
+PATCH 方法套用指定資源的部份修改。
+
+
+HTTP狀態碼
+
+●1xx訊息
+ 這一類型的狀態碼，代表請求已被接受，需要繼續處理。這類回應是臨時回應，只包含狀態行和某些可選的回應頭資訊，並以空行結束。由於HTTP/1.0協定中沒有定義任何1xx狀態碼，所以除非在某些試驗條件下，伺服器禁止向此類客戶端傳送1xx回應。
+ [3] 這些狀態碼代表的回應都是資訊性的，標示客戶應該等待伺服器採取進一步行動。
+ 100 Continue
+ 101 Switching Protocols
+ 102 Processing
+ 103 Early Hints
+
+●2xx成功
+ 這一類型的狀態碼，代表請求已成功被伺服器接收、理解、並接受。
+ 200 OK
+ 201 Created
+ 202 Accepted
+ 203 Non-Authoritative Information
+ 204 No Content
+ 205 Reset Content
+ 206 Partial Content
+ 207 Multi-Status
+ 208 Already Reported
+ 226 IM Used
+
+
+
+●3xx重新導向
+ 這類狀態碼代表需要客戶端採取進一步的操作才能完成請求。通常，這些狀態碼用來重新導向，後續的請求位址（重新導向目標）在本次回應的Location域中指明。
+ 300 Multiple Choices 
+ 301 Moved Permanently
+ 302 Found
+ 303 See Other
+ 304 Not Modified
+ 305 Use Proxy
+ 306 Switch Proxy
+ 307 Temporary Redirect
+ 308 Permanent Redirect
+
+
+●4xx客戶端錯誤
+ 這類的狀態碼代表了客戶端看起來可能發生了錯誤，妨礙了伺服器的處理。除非回應的是一個HEAD請求，否則伺服器就應該返回一個解釋當前錯誤狀況的實體，以及這是臨時的還是永久性的狀況。
+ 這些狀態碼適用於任何請求方法。瀏覽器應當向使用者顯示任何包含在此類錯誤回應中的實體內容。
+
+ 400 Bad Request
+ 401 Unauthorized
+ 402 Payment Required
+ 403 Forbidden
+ 404 Not Found
+ 405 Method Not Allowed
+ 406 Not Acceptable
+ 407 Proxy Authentication Required
+ 408 Request Timeout
+ 409 Conflict
+ 410 Gone
+ 411 Length Required
+ 412 Precondition Failed
+ 413 Request Entity Too Large
+ 414 Request-URI Too Long
+ 415 Unsupported Media Type
+ 416 Requested Range Not Satisfiable
+ 417 Expectation Failed
+ 418 I'm a teapot
+ 421 Misdirected Request
+ 422 Unprocessable Entity
+ 423 Locked
+ 424 Failed Dependency
+ 425 Too Early
+ 426 Upgrade Required
+ 428 Precondition Required
+ 429 Too Many Requests
+ 431 Request Header Fields Too Large
+ 451 Unavailable For Legal Reasons
+ 
+
+
+
+
+●5xx伺服器錯誤
+ 表示伺服器無法完成明顯有效的請求。[56]這類狀態碼代表了伺服器在處理請求的過程中有錯誤或者異常狀態發生，也有可能是伺服器意識到以當前的軟硬體資源無法完成對請求的處理。
+ 
+ 500 Internal Server Error
+ 501 Not Implemented
+ 502 Bad Gateway
+ 503 Service Unavailable
+ 504 Gateway Timeout
+ 505 HTTP Version Not Supported
+ 506 Variant Also Negotiates
+ 507 Insufficient Storage
+ 508 Loop Detected 
+ 510 Not Extended
+ 511 Network Authentication Required 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
