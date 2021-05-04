@@ -5,27 +5,9 @@ x = doc %>% html_nodes(".category")%>% html_text(".category-text")
 
 
 
-台灣前250名yt頻道類別
+台灣前250名yt頻道類別(粉絲數)
 
 doc <-read_html("https://tw.noxinfluencer.com/youtube-channel-rank/top-250-tw-all-youtuber-sorted-by-subs-weekly")
-x=doc %>% html_nodes(".category")
-z= x %>% html_text(".category-text")
-
- for(i in 1:4)		
-{
-	doc <- read_html(paste0("https://tw.noxinfluencer.com/youtube-channel-rank/top-250-tw-all-youtuber-sorted-by-subs-weekly",i))
-  	y=doc %>% html_nodes(".category") %>% html_text(".category-text")
-  	z=append(z, y)
-}
-print(z)
-
-
-各類別累計
-sort(table(z),decreasing=T)
-
-
-世界
-doc <-read_html("https://tw.noxinfluencer.com/youtube-channel-rank/top-250-all-all-youtuber-sorted-by-subs-weekly")
 x=doc %>% html_nodes(".category")
 z= x %>% html_text(".category-text")
 
@@ -40,6 +22,39 @@ print(z)
 
 各類別累計
 sort(table(z),decreasing=T)
+
+grep("音樂類", z)
+length(grep("音樂類", z))
+
+
+世界前250名yt頻道類別(粉絲數)
+
+doc <-read_html("https://tw.noxinfluencer.com/youtube-channel-rank/top-250-all-all-youtuber-sorted-by-subs-weekly")
+x=doc %>% html_nodes(".category")
+z= x %>% html_text(".category-text")
+
+ for(i in 1:1)		
+{
+	doc <- read_html(paste0("https://tw.noxinfluencer.com/youtube-channel-rank/top-250-all-all-youtuber-sorted-by-subs-weekly",i))
+  	y=doc %>% html_nodes(".category") %>% html_text(".category-text")
+  	z=append(z, y)
+}
+print(z)
+
+
+各類別累計
+sort(table(z),decreasing=T)
+音樂類                娛樂類                教育類    
+                  105                    60                    15 
+          音樂類                娛樂類                  遊戲類    
+                   10                    10                    10 
+        電影與動畫                體育類          日常知識分享    
+                   10                    10                     5 
+    日常知識分享                  搞笑類            新聞與政治    
+                    5                     5                     5 
+                類別  
+                    5 
+
 
 
 
