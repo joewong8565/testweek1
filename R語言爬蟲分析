@@ -1,2 +1,21 @@
-
+library(rvest)
 read_html("https://tw.noxinfluencer.com/youtube-channel-rank/top-250-tw-all-youtuber-sorted-by-subs-weekly")
+doc <-read_html("https://tw.noxinfluencer.com/youtube-channel-rank/top-250-tw-all-youtuber-sorted-by-subs-weekly")
+x = doc %>% html_nodes(".category")%>% html_text(".category-text")
+
+
+
+
+doc <-read_html("https://tw.noxinfluencer.com/youtube-channel-rank/top-250-tw-all-youtuber-sorted-by-subs-weekly")
+x=doc %>% html_nodes(".category")
+z= x %>% html_text(".category-text")
+
+ for(i in 1:4)		
+{
+	doc <- read_html(paste0("https://tw.noxinfluencer.com/youtube-channel-rank/top-250-tw-all-youtuber-sorted-by-subs-weekly",i))
+  	y=doc %>% html_nodes(".category") %>% html_text(".category-text")
+  	z=append(z, y)
+}
+print(z)
+
+
