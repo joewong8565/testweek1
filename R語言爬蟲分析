@@ -1,41 +1,19 @@
 library(rvest)
+library(stringr)
 read_html("https://tw.noxinfluencer.com/youtube-channel-rank/top-250-tw-all-youtuber-sorted-by-subs-weekly")
 doc <-read_html("https://tw.noxinfluencer.com/youtube-channel-rank/top-250-tw-all-youtuber-sorted-by-subs-weekly")
 x = doc %>% html_nodes(".category")%>% html_text(".category-text")
 
 
+台灣前100名yt頻道類別(粉絲數)
 
-台灣前250名yt頻道類別(粉絲數)
-
-doc <-read_html("https://tw.noxinfluencer.com/youtube-channel-rank/top-250-tw-all-youtuber-sorted-by-subs-weekly")
-x=doc %>% html_nodes(".category")
-z= x %>% html_text(".category-text")
-
- for(i in 1:4)		
-{
-	doc <- read_html(paste0("https://tw.noxinfluencer.com/youtube-channel-rank/top-250-all-all-youtuber-sorted-by-subs-weekly",i))
-  	y=doc %>% html_nodes(".category") %>% html_text(".category-text")
-  	z=append(z, y)
-}
-print(z)
-
-
-各類別累計
-sort(table(z),decreasing=T)
-
-grep("音樂類", z)
-length(grep("音樂類", z))
-
-
-世界前250名yt頻道類別(粉絲數)
-
-doc <-read_html("https://tw.noxinfluencer.com/youtube-channel-rank/top-250-all-all-youtuber-sorted-by-subs-weekly")
+doc <-read_html("https://tw.noxinfluencer.com/youtube-channel-rank/top-100-tw-all-youtuber-sorted-by-subs-weekly")
 x=doc %>% html_nodes(".category")
 z= x %>% html_text(".category-text")
 
  for(i in 1:1)		
 {
-	doc <- read_html(paste0("https://tw.noxinfluencer.com/youtube-channel-rank/top-250-all-all-youtuber-sorted-by-subs-weekly",i))
+	doc <- read_html(paste0("https://tw.noxinfluencer.com/youtube-channel-rank/top-100-tw-all-youtuber-sorted-by-subs-weekly",i))
   	y=doc %>% html_nodes(".category") %>% html_text(".category-text")
   	z=append(z, y)
 }
@@ -43,17 +21,88 @@ print(z)
 
 
 各類別累計
-sort(table(z),decreasing=T)
-音樂類                娛樂類                教育類    
-                  105                    60                    15 
-          音樂類                娛樂類                  遊戲類    
-                   10                    10                    10 
-        電影與動畫                體育類          日常知識分享    
-                   10                    10                     5 
-    日常知識分享                  搞笑類            新聞與政治    
-                    5                     5                     5 
-                類別  
-                    5 
+
+
+str_trim(z, side = c("both")) 
+
+v <-str_trim(z, side = c("both"))
+
+sort(table(v),decreasing=T)
+
+長條圖
+w=as.factor(v)
+plot(w, col=rainbow(20))
+
+
+
+
+grep("音樂類", z)
+length(grep("音樂類", z))
+
+
+世界前100名yt頻道類別(粉絲數)
+
+doc1 <-read_html("https://tw.noxinfluencer.com/youtube-channel-rank/top-100-all-all-youtuber-sorted-by-subs-weekly")
+xx=doc %>% html_nodes(".category")
+zz= xx %>% html_text(".category-text")
+
+ for(i in 1:1)		
+{
+	doc1 <- read_html(paste0("https://tw.noxinfluencer.com/youtube-channel-rank/top-100-all-all-youtuber-sorted-by-subs-weekly",i))
+  	yy=doc1 %>% html_nodes(".category") %>% html_text(".category-text")
+  	zz=append(zz, yy)
+}
+print(zz)
+
+
+各類別累計
+
+str_trim(zz, side = c("both")) 
+
+vv <-str_trim(zz, side = c("both"))
+
+sort(table(vv),decreasing=T)
+
+
+
+長條圖
+w=as.factor(vv)
+plot(w, col=rainbow(20))
+
+
+
+
+doc %>%html_nodes(".category")%>%html_text(".category-text")
+
+
+
+
+
+z <-doc %>%html_nodes(".kol-table")%>%html_nodes(".lists")%>%html_nodes(".item")%>%html_nodes(".followerNum")%>%html_nodes(".num")
+z <-doc %>%html_nodes(".kol-table")%>%html_nodes(".lists")%>%html_nodes(".item")%>%html_nodes(".followerNum")%>%html_nodes(".num")
+z <-doc %>%html_nodes(".kol-table")%>%html_nodes(".lists")%>%html_nodes(".item")%>%html_nodes(".category")%>%html_nodes(".category-text")
+
+x <-doc %>%html_nodes(".kol-table")%>%html_nodes(".lists")%>%html_nodes(".item")%>%html_nodes(".followerNum")%>%html_nodes(".num")
+table(z,x)
+
+
+content <- html_text(kol-table)
+head(content)
+el.attr <- html_attr("kol-table", "category-text","num")
+
+
+doc <-read_html("https://tw.noxinfluencer.com/youtube-channel-rank/top-100-tw-all-youtuber-sorted-by-subs-weekly")
+version.block <- html_nodes(doc, ".tr-of-th .category")
+
+el.attr <- html_text(version.block, "category-text")
+head(el.attr)
+
+
+1.台灣以及世界前100名yt頻道何者類型的占比最多?
+
+2.台灣和世界的youtube流行頻道趨勢是否相似?
+
+3.是否音樂、娛樂類型頻道是世界
 
 
 
@@ -63,7 +112,26 @@ sort(table(z),decreasing=T)
 
 
 
+動態抓取
+install.packages("RSelenium")
 
+library("RSelenium")
+
+
+remDr <- remoteDriver(
+  remoteServerAddr = "localhost",
+  port = 4444,
+  browserName = "chrome")
+  
+
+
+remDr$navigate("https://tw.noxinfluencer.com/youtube-channel-rank/top-100-tw-all-youtuber-sorted-by-subs-weekly")
+
+web.elem <- remDr$findElement(using = "item", value = "text category")
+
+web.elem$getElementAttribute("title")
+
+web.elem$getElementText()
 
 
 
