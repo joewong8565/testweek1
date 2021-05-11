@@ -72,7 +72,9 @@ skewness(x)
 b。 p值是多少？
 C。在α= .01時，您的結論是什麼？
 d。您會建議Reis目前考慮採取什麼措施？
-
+setwd("C:/Users/Admin/Desktop")
+x = read.table("916.csv", sep = ",",header=T)
+summary(x)
 
 
 
@@ -83,4 +85,6 @@ d。您會建議Reis目前考慮採取什麼措施？
 b。 p值是多少？
 C。當a = .05時，您的結論是什麼？
 
-
+setwd("C:/Users/Admin/Desktop")
+x = read.table("932.csv", sep = ",",header=T)
+summary(x)
