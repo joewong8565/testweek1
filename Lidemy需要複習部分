@@ -56,7 +56,8 @@ w3:ALG101  水仙花數、生命靈數、Array join、String trim
  
  
  P1 你知道什麼是 Request 跟 Response
- 
+ Client對Server發出的請求即是Request，而Server對Client端的回應就是Response。 
+ 在這裡的Client指的就是user的瀏覽器。 當user打開網頁時，即送出request請求給伺服器，然後伺服器response相對應的內容給網頁端。
  
  
  P1 你知道什麼是 DNS 以及運作原理
@@ -80,7 +81,10 @@ w3:ALG101  水仙花數、生命靈數、Array join、String trim
  
  
  P1 你知道常用的 HTTP Header
- 
+ General Header  通用頭
+ Request Header  請求頭
+ Response Header 回應頭
+ Entity Header   實體頭
  
  
  P1 你知道什麼是 API
