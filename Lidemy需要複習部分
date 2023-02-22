@@ -51,7 +51,8 @@ w3:ALG101  水仙花數、生命靈數、Array join、String trim
  
  W4
  P1 你知道網路背後大概的運作模式
- 
+ HTTP全名是 HyperText Transfer Protocol，中文翻作「 超文本傳輸協定」。
+ HTTP 是一套網路傳輸協定，為全球資訊網的資料通訊的基礎。也就是說，網頁前端和後端在溝通時，就是透過 HTTP 協定進行。
  
  
  P1 你知道什麼是 Request 跟 Response
@@ -60,7 +61,7 @@ w3:ALG101  水仙花數、生命靈數、Array join、String trim
  
  P1 你知道什麼是 DNS 以及運作原理
  Domain name system 
- 
+ 全名是 Domain Name System，負責將域名轉換成 IP 位置。
  
  P1 你知道 HTTP 與 HTTPS 的差異
  HTTP是一種用於分佈式、協作式和超媒體訊息系統的應用層協定。HTTP是全球資訊網的數據通信的基礎。
@@ -91,10 +92,30 @@ w3:ALG101  水仙花數、生命靈數、Array join、String trim
  
  
  P1 你知道 HTTP method 有哪些
- 
+ GET：只應用於取得資料
+ HEAD：只獲取回應的 header，但沒有 body。較少使用，通常應用在只想知道 response 資訊時
+ POST：用於提交指定資源的實體。通常會改變伺服器的狀態
+ PUT：取代原本的整個 request。和 PATCH 類似
+ PATCH：修改部分 request
+ DELETE：刪除資源
+ OPTIONS：會回傳 server 支援哪些方法
+ TRACE
+ CONNECT
  
  
  
  P1 你知道基本的 HTTP status code，像是 200、301、400、404、500
- 
+ xx：訊息（較少見）
+ 2xx：Success 成功
+ 200 OK：代表成功
+ 204 No Content：伺服器成功處理了請求，沒有返回任何內容（例如發出 DELETE XXX 訊息，回傳 204 代表刪除成功）
+ 3xx：Redirect 重新導向
+ 301 Moved Permanently：資源「永久」移到新位置
+ 302 Found：資源「暫時」移到其他位置
+ 4xx：User error 客戶端錯誤
+ 400 Bad Request：請求語法錯誤、資源太大、請求訊息無效等
+ 404 Not Found：找不到資源
+ 5xx：Server error 伺服器端錯誤
+ 500 Internal Server Error：伺服器出錯。例如搶票時伺服器當機
+ 503 Service Unavailable：由於臨時的伺服器維護或者過載，伺服器當前無法處理請求
  
