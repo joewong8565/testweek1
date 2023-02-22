@@ -5,6 +5,23 @@ w3:ALG101  水仙花數、生命靈數、Array join、String trim
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  W1
 自我檢測
  P1 你說得出程式如何執行
@@ -27,12 +44,19 @@ w3:ALG101  水仙花數、生命靈數、Array join、String trim
  
  W2
  P1 你能靈活運用變數、迴圈、判斷式等等基本概念來解題
+ 基礎可以
  
  P1 你能一行行的說出現在程式在做什麼
+ 可以
  
  P1 你知道「回傳」跟「輸出」的差異
+ return 是 function 回傳的值
+「要印出東西」要使用 console.log()
+ 
  
  P1 你可以把用文字寫好的演算法轉成程式碼
+ 
+ 
  
  
  W3
@@ -50,21 +74,21 @@ w3:ALG101  水仙花數、生命靈數、Array join、String trim
  
  
  W4
- P1 你知道網路背後大概的運作模式
+ P1 你知道網路背後大概的運作模式 (client 跟 server request 以及 response
  HTTP全名是 HyperText Transfer Protocol，中文翻作「 超文本傳輸協定」。
  HTTP 是一套網路傳輸協定，為全球資訊網的資料通訊的基礎。也就是說，網頁前端和後端在溝通時，就是透過 HTTP 協定進行。
  
  
- P1 你知道什麼是 Request 跟 Response
+ P1 你知道什麼是 Request 跟 Response(傳紙條的故事
  Client對Server發出的請求即是Request，而Server對Client端的回應就是Response。 
  在這裡的Client指的就是user的瀏覽器。 當user打開網頁時，即送出request請求給伺服器，然後伺服器response相對應的內容給網頁端。
  
  
- P1 你知道什麼是 DNS 以及運作原理
+ P1 你知道什麼是 DNS 以及運作原理(令人討厭的 HTTP request 的一生
  Domain name system 
  全名是 Domain Name System，負責將域名轉換成 IP 位置。
  
- P1 你知道 HTTP 與 HTTPS 的差異
+ P1 你知道 HTTP 與 HTTPS 的差異(令人討厭的 HTTP request 的一生
  HTTP是一種用於分佈式、協作式和超媒體訊息系統的應用層協定。HTTP是全球資訊網的數據通信的基礎。
  而HTTPS 透過 HTTP 進行通訊，但通訊過程使用 SSL/TLS 進行加密
  
@@ -75,7 +99,7 @@ w3:ALG101  水仙花數、生命靈數、Array join、String trim
 
 
  
- P1 你知道 GET 與 POST 的差別
+ P1 你知道 GET 與 POST 的差別(GET 與 POST
   GET 表信封內不能裝信件的寄送方式，就像是明信片一般，你可以把要傳遞的資訊寫在信封( head )，寫到滿為止，價格比較便宜。
   而 POST 就是信封內有裝信件的寄送方式（具有body），不但信封可以寫東西，信封內 (body) 還可以置入你想要寄送的資料或檔案，價格較貴
  
@@ -87,7 +111,7 @@ w3:ALG101  水仙花數、生命靈數、Array join、String trim
  Entity Header   實體頭
  
  
- P1 你知道什麼是 API
+ P1 你知道什麼是 API(API 是什麼？為什麼需要它？
   Application Programming Interface 的縮寫，扮演應用程式和應用程式之間的橋樑。
  
  
@@ -95,7 +119,7 @@ w3:ALG101  水仙花數、生命靈數、Array join、String trim
  
  
  
- P1 你知道 HTTP method 有哪些
+ P1 你知道 HTTP method 有哪些(其他的 HTTP Method
  GET：只應用於取得資料
  HEAD：只獲取回應的 header，但沒有 body。較少使用，通常應用在只想知道 response 資訊時
  POST：用於提交指定資源的實體。通常會改變伺服器的狀態
@@ -108,7 +132,7 @@ w3:ALG101  水仙花數、生命靈數、Array join、String trim
  
  
  
- P1 你知道基本的 HTTP status code，像是 200、301、400、404、500
+ P1 你知道基本的 HTTP status code，像是 200、301、400、404、500(常見的 HTTP Status code
  xx：訊息（較少見）
  2xx：Success 成功
  200 OK：代表成功
