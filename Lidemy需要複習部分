@@ -250,15 +250,25 @@ body  <body></body>
       姓名:<input type="text"/>
    </div>
    <div>
-   
+      密碼:<input type="password"/>
    </div>
    <div>
-  
+      email:<input type="email"/>
    </div>
    <div> 
-   
+      日期:<input type="date"/>
    </div>
    <div> 
-   
+      生理性別:<input type="radio" name="gender" id="male"/><label for="male">男性</label>
+      <input type="radio" name="gender" id="female"/><label for="female">女性</label>
+      <input type="radio" name="gender" id="other"/><label for="other">其他</label>
+   </div>
+   <div> 
+      興趣:<input type="checkbox" id="sports"/><label for="sports">運動</label>
+      <input type="checkbox" id="reading"/><label for="reading">閱讀</label>
    </div>
 </form>
+
+SEO  Search Engine Optimization
+<meta name="xxx">以meta標籤讓搜尋引擎抓取，優先顯示給使用者看，增加曝光率和點擊率
+og The Open Graph Protocal 在被搜尋到的時候顯示圖片，增加曝光率和點擊率
