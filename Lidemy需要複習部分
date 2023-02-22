@@ -27,28 +27,74 @@ w3:ALG101  水仙花數、生命靈數、Array join、String trim
  
  W2
  P1 你能靈活運用變數、迴圈、判斷式等等基本概念來解題
+ 
  P1 你能一行行的說出現在程式在做什麼
+ 
  P1 你知道「回傳」跟「輸出」的差異
+ 
  P1 你可以把用文字寫好的演算法轉成程式碼
  
  
  W3
  P1 你理解常用內建函式如何使用
+ 
  P1 你熟悉程式語法並知道如何解決基礎問題
+ 
  P2 你知道為什麼我們需要 unit test
+ 
  P2 你知道什麼是 unit test
+ 
  P2 你知道如何寫 unit test
+ 
  P2 你知道如何測試一個 function
+ 
  
  W4
  P1 你知道網路背後大概的運作模式
+ 
+ 
+ 
  P1 你知道什麼是 Request 跟 Response
+ 
+ 
+ 
  P1 你知道什麼是 DNS 以及運作原理
+ Domain name system 
+ 
+ 
  P1 你知道 HTTP 與 HTTPS 的差異
+ HTTP是一種用於分佈式、協作式和超媒體訊息系統的應用層協定。HTTP是全球資訊網的數據通信的基礎。
+ 而HTTPS 透過 HTTP 進行通訊，但通訊過程使用 SSL/TLS 進行加密
+ 
+ 
+ 
  P1 你知道 localhost 跟 127.0.0.1 是什麼
+  本地主機localhost 。大家常用來ping 127.0.0.1來看本地ip/tcp正不正常，如能ping通即可正常使用。
+
+
+ 
  P1 你知道 GET 與 POST 的差別
+  GET 表信封內不能裝信件的寄送方式，就像是明信片一般，你可以把要傳遞的資訊寫在信封( head )，寫到滿為止，價格比較便宜。
+  而 POST 就是信封內有裝信件的寄送方式（具有body），不但信封可以寫東西，信封內 (body) 還可以置入你想要寄送的資料或檔案，價格較貴
+ 
+ 
  P1 你知道常用的 HTTP Header
+ 
+ 
+ 
  P1 你知道什麼是 API
+  Application Programming Interface 的縮寫，扮演應用程式和應用程式之間的橋樑。
+ 
+ 
  P1 你會使用 node.js 寫出串接 API 的程式
+ 
+ 
+ 
  P1 你知道 HTTP method 有哪些
+ 
+ 
+ 
+ 
  P1 你知道基本的 HTTP status code，像是 200、301、400、404、500
+ 
+ 
