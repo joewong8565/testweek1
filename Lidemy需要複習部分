@@ -269,6 +269,9 @@ body  <body></body>
    </div>
 </form>
 
-SEO  Search Engine Optimization
+★SEO  Search Engine Optimization★
 <meta name="xxx">以meta標籤讓搜尋引擎抓取，優先顯示給使用者看，增加曝光率和點擊率
-og The Open Graph Protocal 在被搜尋到的時候顯示圖片，增加曝光率和點擊率
+og:  The Open Graph Protocal 在被搜尋到的時候顯示圖片，增加曝光率和點擊率，可以透過fb meta for developers 查看搜尋出來的結果會長甚麼樣子
+
+
+
