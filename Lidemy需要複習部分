@@ -201,3 +201,64 @@ w3:ALG101  水仙花數、生命靈數、Array join、String trim
  500 Internal Server Error：伺服器出錯。例如搶票時伺服器當機
  503 Service Unavailable：由於臨時的伺服器維護或者過載，伺服器當前無法處理請求
  
+ 
+ 
+ 
+ 
+ 
+ w6
+ 
+ FE101 HTML基礎
+ 
+html  <html></html>
+head  <head></head> h1 ~ h6(Heading的size大到小)
+body  <body></body>
+
+<div>
+<span>
+兩者差別:文字多運用<span>做區隔，方便css設計
+
+<img title="xxxxx" src="xxxxxxxxxxxxxxxxxx"/>
+<img alt="xxxxx">(當圖片無法顯示，以文字替代
+
+<ul>unorded list  ●
+<ol>orded list 1. 2. 3.
+<li>list item 
+
+<pre> preformatted text (若想要呈現程式碼之類的文字可以適用
+<br>  line break (換行
+
+<table>表格
+<tr>table row (橫的)
+<td>table cell(一個group、子table)
+<th>table header 該column的標題
+ 
+<a hreh="xxxxxxxxx" target='_self_'>  在這個頁面開啟目標頁面     anchor 超連結
+<a hreh="xxxxxxxxx" target='_blank_'> 另外開啟頁面開啟目標頁面
+<a href='#pn'>至底</a>
+<a href='#p1'>至頂</a>
+
+<main> 主要內容
+<nav> navigation 選擇列bar條
+<footer> 腳本  網頁敘述或是其餘連結  在網頁底部
+用上面的標籤比使用<div>更能快速了解該區塊的內容和功能是甚麼
+
+<iframe src="xxxxxxxx"/> 嵌入別人的網頁內容
+
+<form>
+   <div>
+      姓名:<input type="text"/>
+   </div>
+   <div>
+   
+   </div>
+   <div>
+  
+   </div>
+   <div> 
+   
+   </div>
+   <div> 
+   
+   </div>
+</form>
