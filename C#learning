@@ -1,3 +1,71 @@
+cmd  dotnet --list-sdks   檢查.net core版本
+
+
+Console.readkey()：監聽鍵盤事件，可以理解為按任意鍵執行。
+Console.read()：讀取鍵盤輸入的第一個字符，返回ASCII值。
+Console.readline()：讀取所有字符，返回字符串。回車退出 
+Console.Write()：控制台輸出，不換行。
+Console.Writeline()：控制台輸出，換行。
+
+
+int.Parse()是一種類容轉換；表示將數字內容的字符串轉為int類型。如果字符串為空，會出現ArgumentNullException異常；如過字符串內容不是數字，則拋出FormatException異常；
+如果字符串內容所表示數字超出int類型可表示的範圍，則顯示OverflowException異常。
+
+
+
+
+
+檢查流程:
+run 程式碼後在int n = int.Parse(Console.ReadLine());   出現"System.ArgumentNullException: '值不能為 null。 Arg_ParamName_Name'"的錯誤
+google後了解這個錯誤跟輸入值為空的有關係，發現執行程式後並沒有能夠輸入的console，所以回頭檢查建立專案的流程，發現可能是我建立專案時沒有選擇"主控台應用程式"的專案範本
+導致執行程式後沒有出現console，更改之後再跑一次，還是出現錯誤，這次的錯誤是.net core 版本出現問題，現在使用的5.0已經中斷更新，後續推出6.0、7.0版本，
+google後下載7.0版本，然後在右邊方案總管fibo點右鍵，選"編輯專案檔"把<TargetFramework>net5.0</TargetFramework>改成<TargetFramework>net7.0</TargetFramework>
+仍然出現錯誤，轉而先google c# online，執行程式，輸入ｎ＝１２，輸出結果１４４，表示程式沒有問題。
+
+
+
+
+
+請用C#開發費式數列計算機，提供給使用者輸入計算第N個數值(如第100個)，程式計算出數列的值，請用遞回寫
+
+
+
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.Write("請輸入費式數列的第N個數值：");  // 請輸入整數
+        int n = int.Parse(Console.ReadLine());  
+        
+        int result = Fibonacci(n);
+        Console.WriteLine($"費式數列第{n}個數值為：{result}"); // 輸出第n個數的結果，在字符串前加上&相當於對string.format()的簡化，{result} = Fibonacci(n - 1) + Fibonacci(n - 2) 為簡化後結果
+    }
+
+    static int Fibonacci(int n)
+    {
+        if (n <= 0)     // F_{0}=0
+            return 0;  
+        else if (n == 1 || n == 2)
+            return 1;   // F_{1}=1
+        else
+            return Fibonacci(n - 1) + Fibonacci(n - 2); // Fn = F(n-1)+F(n-2)  (n>=2) 
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 using System;
 
 Rectangle 矩形
