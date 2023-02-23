@@ -37,7 +37,7 @@ class Program
     static void Main(string[] args)
     {
         Console.Write("請輸入費式數列的第N個數值：");  // 請輸入整數
-        int n = int.Parse(Console.ReadLine());  
+        int n = int.Parse(Console.ReadLine());       // 在console中輸入n  int.Parse()是一種類容轉換；表示將數字內容的字符串轉為int類型。
         
         int result = Fibonacci(n);
         Console.WriteLine($"費式數列第{n}個數值為：{result}"); // 輸出第n個數的結果，在字符串前加上&相當於對string.format()的簡化，{result} = Fibonacci(n - 1) + Fibonacci(n - 2) 為簡化後結果
@@ -45,12 +45,12 @@ class Program
 
     static int Fibonacci(int n)
     {
-        if (n <= 0)     // F_{0}=0
+        if (n <= 0)                                     // 若n<=0時，則回傳0         F_{0}=0
             return 0;  
         else if (n == 1 || n == 2)
-            return 1;   // F_{1}=1
+            return 1;                                   // 若n=1或是n=2時，則回傳1   F_{1}=1
         else
-            return Fibonacci(n - 1) + Fibonacci(n - 2); // Fn = F(n-1)+F(n-2)  (n>=2) 
+            return Fibonacci(n - 1) + Fibonacci(n - 2); // 若n為其他正整數時，回傳 Fn = F(n-1)+F(n-2)  (n>=2) 
     }
 }
 
