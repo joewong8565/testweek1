@@ -365,3 +365,40 @@ span:hover{
 .price::after{                  在該標籤後面+內容物
   content: attr(data-id);
  }
+
+
+
+文字相關：color、font-family、font-weight 與 line-height
+
+#box1 {
+   background:orange;
+   height:100px;
+   font-size: 30px;
+   font-weight: bold;
+   font-spacing: 1px;
+   line-height: 1.5em;
+   text-align: center;
+   white-space: nowrap;
+   overflow: hidden;　　　　
+   text-overflow:ellipsis; 用．．．替代超出寬度的字
+}
+
+●文字相關 part2：word-break 與 white-space
+
+
+●加了我質感瞬間升級：transition
+＃box {
+    width: 200px;
+    height:100px;
+    border-radius: 30px;
+    text-align:center;
+    line-height: 100px;
+    transition:all 1s;
+    color: black;
+    border: ;
+}
+
+#box1:hover {
+    background:orange;
+    color:white;
+}    
