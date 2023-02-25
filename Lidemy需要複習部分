@@ -274,4 +274,94 @@ body  <body></body>
 og:  The Open Graph Protocal 在被搜尋到的時候顯示圖片，增加曝光率和點擊率，可以透過fb meta for developers 查看搜尋出來的結果會長甚麼樣子
 
 
+▲CSS▲
+選我選我選我選我：CSS selector
+selector 
 
+universal selectors (所有元素)
+*{
+  color:red
+}
+
+標籤 
+div {
+   background:red; 
+}
+
+body {
+   background green;
+}
+
+%(id名稱) {
+   background:red;
+}
+
+.(class名稱){
+   background:green;
+}
+
+.(class名稱).(class名稱){          中間沒有空格代表需同時符合條件
+   background:yellow
+}
+
+.lv1 > div{                       lv1的下一層
+   background:red; 
+}
+
+
+.lv1 .bg-red{                     底下所有的bg-red
+    background:red;
+}
+
+
+.bg-red + .bg-red{                選擇bg-red後面的bg-red(正右邊，不能有其他元素)
+
+
+}
+
+ 
+.bg-red ~ .bg-red{                選擇bg-red後面所有的bg-red
+
+
+}
+
+●CSS Selector：Pseudo-classes，以 hover 為例 (利用來debug、預覽效果
+span:hover{
+   background:red;
+}
+
+
+●CSS Selector：nth-child           先看順序，再看標籤，如果該順序不是那種標籤就選取不到
+.wrapper div:nth-child(n){
+    background:red;
+}
+ 
+.wrapper div:nth-child(odd){      選奇數
+    background:red;
+}
+
+.wrapper div:nth-child(even){     選偶數
+    background:red;
+}
+
+
+.wrapper div:nth-child(3n){       選0 3 6 9 .....
+    background:red;
+}
+
+
+.wrapper div:nth-child(3n+1){      選1 4 7 .....
+    background:red;
+}
+
+
+●CSS Selector：before 與 after   pseudo-element
+
+.price::before{                  在該標籤前面+內容物
+  content: "$";
+ }
+
+
+.price::after{                  在該標籤後面+內容物
+  content: attr(data-id);
+ }
