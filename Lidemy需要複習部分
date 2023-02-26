@@ -402,3 +402,50 @@ span:hover{
     background:orange;
     color:white;
 }    
+
+▲FE102▲前端必備：JavaScript
+
+●執行 JavaScript 的一百種方式
+
+●DOM 是什麼？
+Document Obeject Model
+
+●如何選到想要的元素：getElement
+getElementsByTagName  由標籤獲取元素
+
+getElementsByClassName  由類別獲取元素
+
+getElementsById         由ID獲取元素
+
+
+querySelector
+
+quertSelectorAll
+
+●改變元素的 CSS
+
+●改class name
+element.classList.add('active')    
+element.classList.toggle('main')
+element.classList.remove('main')
+
+innerText   
+innerHTML   抓取標籤中的所有東西
+outerHTML   
+
+●appendChild 插入元素
+const element = document.querySelector('#block')   刪除
+element.appendChild(document.querySelector('a'))
+  
+const item = document.createElement('div')         新增
+item.innerText = '123' 
+element.appendChild(item)
+
+
+●eventListener 與 callback function
+
+●event(e) 是什麼碗糕？
+ 
+●表單事件處理 onSubmit
+
+●事件傳遞機制詳解：捕獲與冒泡
