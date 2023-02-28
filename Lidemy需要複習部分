@@ -204,6 +204,80 @@ w3:ALG101  水仙花數、生命靈數、Array join、String trim
  
  
  
+ W6 自我檢測
+ 
+ ●●P1 你知道 HTML 是在做什麼的●●
+ HTML（HyperText Markup Language，超文本標記語言）是打造網頁的基石。它表述並定義網頁的內容。伴隨 HTML 而來的技術還有描述網頁外觀（CSS）及功能性的程式語言（JavaScript）。
+ 
+ ●●P1 你知道如何使用有語意的（semantic）標籤●●
+ ●●HTML 基礎●●
+ html  <html></html>
+head  <head></head> h1 ~ h6(Heading的size大到小)
+body  <body></body>
+
+<div>
+<span>
+兩者差別:文字多運用<span>做區隔，方便css設計
+
+<img title="xxxxx" src="xxxxxxxxxxxxxxxxxx"/>
+<img alt="xxxxx">(當圖片無法顯示，以文字替代
+
+<ul>unorded list  ●
+<ol>orded list 1. 2. 3.
+<li>list item 
+
+<pre> preformatted text (若想要呈現程式碼之類的文字可以適用
+<br>  line break (換行
+
+<table>表格
+<tr>table row (橫的)
+<td>table cell(一個group、子table)
+<th>table header 該column的標題
+ 
+<a hreh="xxxxxxxxx" target='_self_'>  在這個頁面開啟目標頁面     anchor 超連結
+<a hreh="xxxxxxxxx" target='_blank_'> 另外開啟頁面開啟目標頁面
+<a href='#pn'>至底</a>
+<a href='#p1'>至頂</a>
+
+<main> 主要內容
+<nav> navigation 選擇列bar條
+<footer> 腳本  網頁敘述或是其餘連結  在網頁底部
+用上面的標籤比使用<div>更能快速了解該區塊的內容和功能是甚麼
+
+<iframe src="xxxxxxxx"/> 嵌入別人的網頁內容
+ 
+ 
+ 
+ ●●P1 你知道基本 SEO 的概念●●
+ ●●P1 你知道 CSS 是什麼●●
+ ●●P1 你知道 inline、block 跟 inline-block 的區別●●
+ ●●P1 你知道什麼是 box model●●
+ ●●P1 你知道 position 的所有屬性及其差別●●
+ ●●P2 你知道 :hover, :before, :after●●
+ ●●P2 你知道 :nth-child 的各種用法●●
+ ●●P2 你熟悉 CSS selector，可以輕鬆選到想選到的元素●●
+ 
+ W7 自我檢測
+ 
+ ●●P1 你知道 JavaScript 跑在網頁上跟跑在 Node.js 上差在哪裡●●
+ ●●P1 你知道 DOM 是什麼●●
+ ●●P1 你知道如何用 JavaScript 操控 DOM 物件●●
+ ●●P1 你知道如何幫一個按鈕加上 event listener●●
+ ●●P1 你知道捕獲與冒泡是什麼●●
+ ●●P1 你知道什麼是事件代理（delegation）●●
+ ●●P2 你知道怎麼用 JavaScript 更改元素的 style●●
+ ●●P2 你知道 preventDefault 與 stopPropagation 的差異●●
+ 
+ W8自我檢測
+ 
+ ●●P1 你知道什麼是 API●●
+ ●●P1 你知道什麼是 Ajax●●
+ ●●P1 你知道從網頁前端呼叫 API 與在自己電腦上寫程式呼叫的差異●●
+ ●●P1 你知道什麼是同源政策（Same-origin policy）●●
+ ●●P1 你知道如何存取跨網域的資源（CORS）●●
+ ●●P1 你知道什麼是 JSON●●
+ ●●P2 你知道什麼是 JSONP 及其原理●●
+ 
  
  
  w6
