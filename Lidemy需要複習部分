@@ -204,7 +204,7 @@ w3:ALG101  水仙花數、生命靈數、Array join、String trim
  
  
  
- W6 自我檢測
+ ★★★W6 自我檢測★★★
  
  ●●P1 你知道 HTML 是在做什麼的●●
  HTML（HyperText Markup Language，超文本標記語言）是打造網頁的基石。它表述並定義網頁的內容。伴隨 HTML 而來的技術還有描述網頁外觀（CSS）及功能性的程式語言（JavaScript）。
@@ -249,15 +249,127 @@ body  <body></body>
  
  
  ●●P1 你知道基本 SEO 的概念●●
+ 搜尋引擎最佳化是透過了解搜尋引擎的運作規則來調整網站，以及提高目的網站在有關搜尋引擎內排名的方式。
+ 
  ●●P1 你知道 CSS 是什麼●●
+ CSS 是專為定義網頁版面設計（layout）而發明，透過 CSS，我們能指定文件中各項 HTML 元件的視覺樣式。CSS 全名是 Cascading Style Sheets，階層樣式表。
+ 
  ●●P1 你知道 inline、block 跟 inline-block 的區別●●
+ Inline行內元素
+．元素可在同一行內呈現，圖片或文字均不換行，也不會影響其版面配置
+．不可設定長寬，元素的寬高由它的內容撐開
+另外，常聽到行內元素不能設定上下margin/padding，但並非不能設定，是排版不會隨著設定改變，字仍在行內，其他行並不會被推開。
+
+ Block區塊元素
+．元素寬度預設會撐到最大，使其占滿整個容器
+．可以設定長寬/margin/padding，但仍會占滿一整行
+
+ inline-block行內區塊
+．以inline的方式呈現，但同時擁有block的屬性
+．可設定元素的寬高/margin/padding
+．可水平排列
+
+ 
  ●●P1 你知道什麼是 box model●●
+ Box Model 主要由四個部分主成，由內而外分別是 Content ( 內容 )、Padding ( 內邊距 )、Border ( 邊框 ) 和 Margin ( 外邊距 )
+ 
  ●●P1 你知道 position 的所有屬性及其差別●●
+static (靜態定位)
+relative (相對定位)
+fixed (固定定位)
+absolute (絕對定位)
+sticky (黏貼定位)
+ 
  ●●P2 你知道 :hover, :before, :after●●
+ 以 hover 為例 (利用來debug、預覽效果
+ span:hover{
+   background:red;
+}
+
+.price::before{                  在該標籤前面+內容物
+  content: "$";
+ }
+
+
+.price::after{                  在該標籤後面+內容物
+  content: attr(data-id);
+ }
+
+
+ 
  ●●P2 你知道 :nth-child 的各種用法●●
+ ●CSS Selector：nth-child           先看順序，再看標籤，如果該順序不是那種標籤就選取不到
+.wrapper div:nth-child(n){
+    background:red;
+}
+ 
+.wrapper div:nth-child(odd){      選奇數
+    background:red;
+}
+
+.wrapper div:nth-child(even){     選偶數
+    background:red;
+}
+
+
+.wrapper div:nth-child(3n){       選0 3 6 9 .....
+    background:red;
+}
+
+
+.wrapper div:nth-child(3n+1){      選1 4 7 .....
+    background:red;
+}
+
+ 
+ 
  ●●P2 你熟悉 CSS selector，可以輕鬆選到想選到的元素●●
  
- W7 自我檢測
+ universal selectors (所有元素)
+*{
+  color:red
+}
+
+標籤 
+div {
+   background:red; 
+}
+
+body {
+   background green;
+}
+
+%(id名稱) {
+   background:red;
+}
+
+.(class名稱){
+   background:green;
+}
+
+.(class名稱).(class名稱){          中間沒有空格代表需同時符合條件
+   background:yellow
+}
+
+.lv1 > div{                       lv1的下一層
+   background:red; 
+}
+
+.lv1 .bg-red{                     底下所有的bg-red
+    background:red;
+}
+
+.bg-red + .bg-red{                選擇bg-red後面的bg-red(正右邊，不能有其他元素)
+}
+
+ 
+.bg-red ~ .bg-red{                選擇bg-red後面所有的bg-red
+}
+
+
+
+ 
+ ★★★W7 自我檢測★★
  
  ●●P1 你知道 JavaScript 跑在網頁上跟跑在 Node.js 上差在哪裡●●
  ●●P1 你知道 DOM 是什麼●●
