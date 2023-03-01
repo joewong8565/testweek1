@@ -32,6 +32,11 @@ ALTER TABLE 資料表名稱 ADD/DROP 欄位名稱;  修改資料庫欄位
 實作之前打開f12→↓網路→停用快取  
 
 
+sql編碼與排序  utf8mb4_general_ci、utf8mb4_unicode_ci
+
+
+
+
 
 
 
