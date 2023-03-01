@@ -1,0 +1,65 @@
+Table schema
+名稱   型態    編碼排序   屬性
+
+
+Index、Unique 這些有什麼用？
+
+ 
+SELECT    
+
+SELECT "欄位" FROM "表格" WHERE "欄位" [比較]
+
+where 比對字串時可以加入 like 與 % 來做字串樣本 pattern 篩選.
+
+除了 like 外,還可以使用 not like 來反向搜尋.
+
+SELECT 其他參數 FROM , DISTINCT , WHERE , ORDER BY , LIMIT
+
+
+INSERT
+
+
+
+UPDATE
+
+
+
+DELETE
+
+
+ALTER TABLE 資料表名稱 ADD/DROP 欄位名稱;  修改資料庫欄位
+
+實作之前打開f12→↓網路→停用快取  
+
+
+
+
+
+mysql> INSERT INTO employee VALUES ('Ben','Testing','Engineer');
+Query OK, 1 row affected (0.00 sec)
+ 
+mysql> INSERT INTO employee (Name , Dept) VALUES ('Afa','Power');
+Query OK, 1 row affected (0.00 sec)
+ 
+mysql> INSERT INTO employee (Name , Dept , JobTitle) VALUES ('Boss','Testing','Manager');
+Query OK, 1 row affected (0.00 sec)
+ 
+mysql> INSERT INTO employee (Name , JobTitle , Dept) VALUES ('Cars','Senior Engineer' ,'Testing');
+Query OK, 1 row affected (0.00 sec)
+
+
+mysql> INSERT INTO employee VALUES ('Ben','Testing','Engineer') , ('Boss','Testing','Manager');
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+ 
+mysql> INSERT INTO employee (Name , Dept) VALUES ('Afa','Power') , ('Ben','Testing');
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+ 
+mysql> INSERT INTO employee (Name , Dept , JobTitle) VALUES ('Boss','Testing','Manager') , ('Ben','Testing','Engineer') ;
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+ 
+mysql> INSERT INTO employee (Name , JobTitle , Dept) VALUES ('Cars','Senior Engineer' ,'Testing') , ('Ben','Testing','Engineer') ;
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
