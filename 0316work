@@ -1,0 +1,217 @@
+StopPoint.aspx
+
+<%@ Page Language="C#" AutoEventWireup="true"  CodeFile="StopPoint_1.aspx.cs" Inherits="StopPoint_1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+<meta http-equiv="refresh" content="180" >
+    <title>IPS03-警示區即時警示-今日進入警示區車輛</title>
+    <link href="http://gps.epa.gov.tw/Vehicleinfo/ie.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+.style2 {
+	font-size: medium
+}
+-->
+</style>
+
+</head>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+	//開子視窗
+	function openWin(url,width,height){
+		var left = 1;
+		var top = 1;
+		var action= 'scrollbars=yes,toolbar=no,resizable=yes,width=' + width + ',height=' + height + ',top=' + top + ',left=' + left;
+		w = window.open(url,'dialog',action);
+		w.focus();
+	}
+-->
+</SCRIPT>
+<body>
+    <form id="form1" runat="server">
+    <div style="text-align:center;class:A4 style2">
+        IPS03-警示區即時警示-今日進入警示區車輛<br/>
+          <asp:Label ID = "CarNum" runat ="server" Text="車號"></asp:Label>
+          <asp:TextBox ID="TextBox2" runat="server">請輸入車號</asp:TextBox>
+         <asp:Label ID = "Insti" runat ="server" Text="清除機構"></asp:Label><br/>
+
+          <asp:Label ID = "City" runat ="server" Text="縣市別"></asp:Label>
+    <asp:DropDownList ID="CarTypeDDL" runat="server"></asp:DropDownList>
+        <asp:DropDownList ID="AlertAreaDDL" runat="server"></asp:DropDownList>
+        <asp:DropDownList ID="InstiDDL" runat="server"></asp:DropDownList>
+          <asp:Label ID = "AlertArea" runat ="server" Text="警示區"></asp:Label><br/>
+        <asp:Label ID = "CarType" runat ="server" Text="車型"></asp:Label>
+        <asp:Label ID = "Time" runat ="server" Text="時間"></asp:Label>
+        <asp:TextBox runat="server" ID="CarTypetbx" Text="暫無" /> 
+        <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
+        <asp:CheckBoxList ID="MultiSelect" runat="server">
+                <asp:ListItem Value="1">Apple</asp:ListItem>
+                <asp:ListItem Value="2">Grapes</asp:ListItem>
+                <asp:ListItem Value="3">Orange</asp:ListItem>
+                <asp:ListItem Value="4">Strawberry</asp:ListItem>
+                <asp:ListItem Value="5">Water Melon</asp:ListItem>
+        </asp:CheckBoxList>
+        
+
+        <table>
+
+        </table>
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" AllowPaging="True" PageSize="30" OnRowCommand="OSApply_List_RowCommand"
+            OnPageIndexChanging="GridView1_PageIndexChanging" BorderStyle="Groove" BackColor="#DEBA84" BorderColor="#DEBA84" BorderWidth="1px" CellPadding="3" CellSpacing="2" Width="98%">
+            <Columns>
+                <asp:TemplateField HeaderText="車號">
+                    <ItemTemplate>
+                        <asp:HiddenField ID="hideappid"  value='<%# DataBinder.Eval(Container.DataItem, "車號") %>' runat="server" />
+                        <asp:LinkButton CssClass="Top_Text" runat="server" CommandName="view" CommandArgument="<%# Container.DataItemIndex %>" ID="btn_Number"><%# DataBinder.Eval(Container.DataItem, "車號")%></asp:LinkButton>
+                    </ItemTemplate>
+                    <ItemStyle HorizontalAlign="Center" CssClass="style28" />
+                </asp:TemplateField>
+                <asp:BoundField DataField="清除機構" HeaderText="清除機構" SortExpression="清除機構" />
+                <asp:BoundField DataField="車型" HeaderText="車型" SortExpression="車型" />
+                <asp:BoundField DataField="駕駛" HeaderText="駕駛" SortExpression="駕駛" />
+                <asp:BoundField DataField="駕駛手機" HeaderText="駕駛手機" SortExpression="駕駛手機" />
+                <asp:BoundField DataField="進入禁行區時間" HeaderText="進入警示區時間" SortExpression="進入禁行區時間" />
+                <asp:BoundField DataField="禁行區名稱" HeaderText="警示區名稱" SortExpression="禁行區名稱" />
+                <asp:BoundField DataField="禁行區描述" HeaderText="警示區描述" SortExpression="禁行區描述" />
+                <asp:TemplateField HeaderText="今日軌跡連結">
+                    <ItemTemplate>
+                    <asp:ImageButton ID="ImageButton1" runat="server" ImageAlign="AbsMiddle" ImageUrl="car.gif" CommandName="link_car_log" CommandArgument="<%# Container.DataItemIndex %>" />
+                    </ItemTemplate>
+                    <ItemStyle HorizontalAlign="Center" CssClass="style28" />
+                </asp:TemplateField>
+            </Columns>
+            <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
+            <RowStyle BackColor="#FFF7E7" ForeColor="#8C4510" />
+            <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
+            <PagerStyle ForeColor="#8C4510" HorizontalAlign="Center" />
+            <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
+        </asp:GridView>
+        <br />
+       </div>
+    </form>
+</body>
+</html>
+
+
+
+
+StopPoint_1.aspx.cs
+
+using System;
+using System.Data;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using BL;
+public partial class StopPoint_1 : System.Web.UI.Page 
+{
+    protected StopPointBL oStopPointBL = new StopPointBL() ;
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            //if (Session["LoginRole"] == null || Session["LoginID"] == null || Session["LoginRole"].ToString() == "" || Session["LoginID"].ToString() == ""
+            //    || (Session["LoginRole"].ToString().ToUpper() != "C" && Session["LoginRole"].ToString().ToUpper() != "E"))//只限管理單位、環保局
+            //{
+            //    Response.Redirect("/DefaultLogin.aspx");
+            //}
+            DDL();
+            GridView1DataBind();
+
+            Mselect();
+           
+        }
+    }
+    protected void OSApply_List_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+        try
+        {
+            int index = Convert.ToInt32(e.CommandArgument) - (GridView1.PageIndex * GridView1.PageSize);
+            DateTime d = DateTime.Now;
+            GridViewRow selectedRow = GridView1.Rows[index];
+            HiddenField hideappid = (HiddenField)selectedRow.Cells[0].FindControl("hideappid");
+            string str = "";
+		   str = "/gpswebu/Jquery/NWGPSMap.aspx?plate_no=" + hideappid.Value + "&datetime=" + d.ToString("d") ;
+
+            switch (e.CommandName)
+            {
+                case "view"://查車輛資料
+                    this.Controls.Add(new LiteralControl("<script>openWin('/Pst/New/VehicleDetail.aspx?History=1&status=ZZ&plate_no=" + hideappid.Value + "','600','400');</script>"));
+                    break;
+                case "link_car_log"://查車輛軌跡
+                    this.Controls.Add(new LiteralControl("<script>openWin('" + str +"','800','1000');</script>"));
+                    break;
+            }
+        }
+        catch
+        {
+
+        }
+    }
+    protected void GridView1DataBind()
+    {
+        string Error = "";
+        DataTable DT = oStopPointBL.ban_today_A(out Error);
+        GridView1.DataSource = DT;
+        GridView1.DataBind();
+    }
+    protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    {
+        GridView1.PageIndex = e.NewPageIndex;
+        GridView1DataBind();
+    }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        // 取得選中的下拉式清單的值
+        string selectedValue_CarType = CarTypeDDL.SelectedItem.Value;
+        string selectedValue_Insti = InstiDDL.SelectedItem.Value;
+        string selectedValue_AlertArea = AlertAreaDDL.SelectedItem.Value;
+        // 將選中的值寫入文本方塊中
+
+        CarTypetbx.Text = selectedValue_CarType;
+
+       
+
+
+    }
+    protected void DDL() 
+    { //車種
+        DataTable Car = oStopPointBL.Wastecode_Vehicle_Model();
+        CarTypeDDL.DataSource = Car;
+        CarTypeDDL.DataValueField = "CodeNO";
+        CarTypeDDL.DataTextField = "codeNameCH";
+        CarTypeDDL.DataBind();
+        //警示區名稱
+        DataTable AArea = oStopPointBL.Alert_Area();
+        AlertAreaDDL.DataSource = AArea;
+        AlertAreaDDL.DataValueField = "AID";
+        AlertAreaDDL.DataTextField = "Name";
+        AlertAreaDDL.DataBind();
+        //清除機構
+        DataTable Insti = oStopPointBL.CleanInsti();
+        InstiDDL.DataSource = Insti;
+        InstiDDL.DataValueField = "fac_no";
+        InstiDDL.DataTextField = "fac_name";
+        InstiDDL.DataBind();
+    }
+
+    protected void Mselect()
+    {
+        string selectedValues = "";
+        foreach (ListItem item in MultiSelect.Items)
+        {
+            if (item.Selected)
+            {
+                selectedValues += item.Value + ",";
+            }
+        }
+        selectedValues = selectedValues.TrimEnd(',');
+
+
+
+    }
+}
+
